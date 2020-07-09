@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: 0 2,14 * * *
+    - cron: 0 14 * * *
 
 jobs:
   build:
@@ -51,10 +51,12 @@ jobs:
     
       
     # HostLoc 赚积分
-    - name: 'HostLoc Get points'
+    - name: 'textnow protect number'
       env:
-        HOSTLOC_USERNAME: ${{ secrets.HOSTLOC_USERNAME }}
-        HOSTLOC_PASSWORD: ${{ secrets.HOSTLOC_PASSWORD }}
-      run: python scripts/hostloc/hostloc_get_points.py
+        TEXTNOW_USERNAME: ${{ secrets.TEXTNOW_USERNAME }}
+        TEXTNOW_PASSWORD: ${{ secrets.TEXTNOW_PASSWORD }}
+        TEXTNOW_NUMBER: ${{ secrets.TEXTNOW_NUMBER }}
+        TEXTNOW_MSG: ${{ secrets.TEXTNOW_MSG }}
+      run: python /scripts/_textnow.py
     
     
