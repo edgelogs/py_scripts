@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: 0 14 * * *
+    - cron: 0 0 */9 * *
 
 jobs:
   build:
@@ -50,8 +50,8 @@ jobs:
     #    pytest nothing.py
     
       
-    # HostLoc 赚积分
-    - name: 'textnow protect number'
+    # Textnow 保号
+    - name: 'textnow'
       env:
         TEXTNOW_USERNAME: ${{ secrets.TEXTNOW_USERNAME }}
         TEXTNOW_PASSWORD: ${{ secrets.TEXTNOW_PASSWORD }}
